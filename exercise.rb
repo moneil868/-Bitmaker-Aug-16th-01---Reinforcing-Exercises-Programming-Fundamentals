@@ -27,6 +27,20 @@ class Person
     # puts emotions
   end
 
+  # Add an instance method to your class that displays a message describing how the person is feeling. Substitute the words "high", "medium", and "low" for the emotion levels 1, 2, and 3.
+  def display_emotions
+    @emotions.each do |k, v|
+      if v == 3
+        puts "#{@name} is feeling a high amount of #{k}."
+      elsif v == 2
+        puts "#{@name} is feeling a medium amount of #{k}."
+      else
+        puts "#{@name} is feeling a low amount of #{k}."
+      end
+    end
+  end
+
+
 end
 
 
@@ -36,3 +50,9 @@ puts first_person.inspect
 
 first_person.add_emotions(emotions_hash)
 puts first_person.inspect
+
+
+# Exercise 3
+puts "Displaying emotions for created instance"
+puts
+first_person.display_emotions
